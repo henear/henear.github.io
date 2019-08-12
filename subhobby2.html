@@ -1,0 +1,163 @@
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+nav {
+    float: left;
+    max-width: 460px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 520px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+
+  
+<nav>
+  <ul>
+    <b><font size = "8">
+	Directory</font>
+    </b>
+  </br>
+    <a href=index.html>Author's homepage</a>
+
+    <li><a href="works/hath.pdf">Quizzes</a></li>
+    <li><a href="official.html">Official Appearance</a></li>
+    <li><a href="external.html">External Sources</a></li>
+    <li><a href="other.html">Related Figures</a></li>
+    <li><a href="moha.html">Moha(Videos)</a></li>
+    <li><a href="mohap.html">Moha(Pictures)</a></li>
+  </ul>
+	<b><font size = "8">
+        Inscription</font>
+    </b>
+<br/>
+	All inscriptions coming from People's Daily
+<head>
+	<img alt= "a" height="640" width="480" src="picture/inscr/19910312.png">
+<script>
+a=[19900305,19910312,19910312,19930425,19940531,19960130,19960507,19961017,19970726,19990405,19990422,19990423,19990909,19991109,19991218,20020325,20030417,20040905]
+i=0
+	setInterval("slideshow()", 10000)
+	 function slideshow(){
+        	if(!document.images)
+                	return
+        	document.images[0].src="picture/inscr/"+a[i]+".png"
+        	i = (i+1)%a.length
+        }
+
+</script>
+</head>
+</nav>
+
+
+<article>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function startTime() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var age = year - 1926;
+    var amonth = 0;
+    if(month < 8|| (month == 8 && day < 17)){
+	age -= 1;
+    }
+    if(month >= 9){ 
+	if( day >= 17){
+        	amonth = month - 8;
+	}else{
+		amonth = month - 9;
+	}
+    }
+    else if(month < 8 ){
+	if( day >= 17){
+                amonth = month + 4;
+        }else{
+                amonth = month + 3;
+        }
+    }
+    else if(day < 17){
+	amonth = 11;
+    }
+    var aday = 0;
+    if(day >= 17){
+       aday = day - 17;
+    }
+    if(day < 17){
+	if(amonth == 1|| amonth == 2 || amonth == 4 || amonth ==6 || amonth == 8 || amonth == 9 || amonth == 11){
+		aday = day + 14;
+	}else if(amonth == 5 || amonth == 7 || amonth == 10 || amonth == 12){
+		aday = day + 13;
+	}else{
+		if(ayear % 4 == 0){
+		aday = day + 12;
+		}else{
+		aday = day + 11;
+		}
+	}
+    }
+    var secs = h * 3600 + m * 60 + s;
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    "Now is " +  month + "/" + day + "/" + year + " " + h + ":" + m + ":" + s +
+    ". He(1926/8/17-"+year +"/"+month +"/" + day + ") passed away."
+    var t = setTimeout(startTime, 0);
+    
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<b><font size = "10">
+        Standard Picture</font>
+</b>
+<div id="txt"></div>
+</article>
+<article>
+
+  <img src="picture/zhangzhe/jzmbw.png" 
+  alt="BiaozhunXiang"
+  style="width:510px;height:854px;">
+</article>
+<article>
+<audio controls autoplay loop = "loop" stype="width:1510px">
+        <source src = "music/funeral.mp3" type ="audio/mpeg">
+</audio>
+</article>
+</html>

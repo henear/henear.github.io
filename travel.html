@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div.a{
+        text-align: center;
+	}
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 550px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+  <div class="a">
+    <h3>My Travel Map</h3>
+  <p><i>Read More, Walk More. --Chinese Proverb</i></p>
+  </div>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Beijing
+  var beijing = {lat: 39.9242, lng: 116.4314};
+  var shanghai = {lat: 31.2304, lng: 121.4737};
+  var tianjin = {lat: 39.3434, lng: 117.3616};
+  var weihai = {lat: 37.5131, lng: 122.1204};
+  var qingdao = {lat:36.0671, lng: 120.3826};
+  var hongkong = {lat:22.3964, lng: 114.1095};
+  var suzhou = {lat:31.2990, lng:120.5853};
+  var beidaihe= {lat: 39.8346, lng: 119.4845};
+  var hangzhou = {lat:30.2741, lng: 120.1551};
+  var houston = {lat: 29.7604, lng:-95.3698};
+  var austin = {lat:30.2672, lng:-97.7431};
+  var richardson = {lat:32.9483,lng:-96.7299};
+  var seattle = {lat:47.6062, lng:-122.3321};
+  var newyork = {lat:40.7128, lng:-74.0060};
+  var dc = {lat: 38.9072, lng:-77.0369};
+  var sfo = {lat: 37.7749,lng:-122.4194};
+  var lax = {lat: 34.0522, lng: -118.2437};
+  var spokane = {lat: 47.6588, lng:-117.4260};
+  var boston = {lat: 42.3601,lng:-71.0589};
+  var mexico = {lat: 19.4326, lng:-99.1332};
+  var havana = {lat: 23.1136, lng:-82.3666};
+  var panama = {lat: 8.9824, lng:-79.5199};
+  var toronto = {lat: 43.6532,lng:-79.3832};
+  var sjo = {lat: 9.9281,lng: -84.0907};
+  var alajuela = {lat: 10.0159, lng:-84.2142};
+  // The map, centered at Beijing
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 2.3, center: new google.maps.LatLng(39.9242, 116.4314)});
+  // The marker, positioned at Beijing
+  var i;
+  
+  var locations = [toronto, sjo, panama, alajuela, mexico, havana, spokane, boston,sfo, lax, beijing, shanghai, dc, tianjin,seattle, newyork, austin, richardson, weihai,qingdao,hongkong,suzhou,beidaihe, hangzhou, houston]
+  for(i = 0; i < locations.length; i++){
+    var marker = new google.maps.Marker({position:locations[i], map:map});
+  }
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0C2ZIKHcVIdPsT1N08W54MiwLQKul7p0&callback=initMap">
+    </script>
+  </body>
+<body>
+<div class="a">
+                <p style="text-align:center">
+                        <h3>
+			<a href="index.html">Homepage</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="school.html">School Work</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="intern.html">Industrial Work</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="sideprojects.html">Side Projects</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="go.html">Go</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="subhobby.html">Totally Different</a>
+                        </h3>
+                </p>
+</div>
+</body>
+</html>

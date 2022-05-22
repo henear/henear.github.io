@@ -48,13 +48,15 @@ function initMap() {
   var toronto = {lat: 43.6532,lng:-79.3832};
   var sjo = {lat: 9.9281,lng: -84.0907};
   var alajuela = {lat: 10.0159, lng:-84.2142};
+  var nanjing = {lat: 32.0584, lng:118.7965};
+  var wuhan = {lat: 30.5928, lng=114.3052};		    
   // The map, centered at Beijing
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 2.3, center: new google.maps.LatLng(39.9242, 116.4314)});
   // The marker, positioned at Beijing
   var i;
   
-  var locations = [toronto, sjo, panama, alajuela, mexico, havana, spokane, boston,sfo, lax, beijing, shanghai, dc, tianjin,seattle, newyork, austin, richardson, weihai,qingdao,hongkong,suzhou,beidaihe, hangzhou, houston]
+  var locations = [nanjing, wuhan, toronto, sjo, panama, alajuela, mexico, havana, spokane, boston,sfo, lax, beijing, shanghai, dc, tianjin,seattle, newyork, austin, richardson, weihai,qingdao,hongkong,suzhou,beidaihe, hangzhou, houston]
   for(i = 0; i < locations.length; i++){
     var marker = new google.maps.Marker({position:locations[i], map:map});
   }
